@@ -1,8 +1,13 @@
 import { Header } from "./components/Header"
+import { Tip } from "./components/Tip"
 import styles from "./app.module.css"
+import { Letter } from "./components/Letter"
+import { Input } from "./components/Input"
+import { Button } from "./components/Button"
+import { LettersUsed } from "./components/LettersUsed"
 
 function App() {
-  
+
   function handleRestartGame (){
     alert("Reiniciando")
   }
@@ -11,6 +16,25 @@ function App() {
     <div className={styles.container}>
       <main>
         <Header current={53} max={10} onRestart={handleRestartGame}/>
+        <Tip tip="Dinamica"/>
+        
+        <div className={styles.word}>
+          <Letter value="R"/>
+          <Letter value="E"/>
+          <Letter value="A"/>
+          <Letter value="C"/>
+          <Letter value="T"/>
+        </div>
+
+        <h4>Palpite</h4>
+
+        <div className={styles.guess}>
+          <Input autoFocus maxLength={1} placeholder="?"/>
+          <Button title="Confirmar"/>
+        </div>
+
+        <LettersUsed/>
+
       </main>
     </div>
   )
